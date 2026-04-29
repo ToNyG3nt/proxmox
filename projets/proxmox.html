@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
     <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/proxmox-dashboard.js" defer></script>
   </head>
   <body>
     <nav class="barre-de-navigation">
@@ -43,6 +44,47 @@
     </header>
 
     <main class="conteneur">
+
+      <!-- ── Live Dashboard ───────────────────────────────── -->
+      <section>
+        <h2>Infrastructure live</h2>
+
+        <div class="px-dashboard">
+
+          <!-- Header -->
+          <div class="px-dashboard-header">
+            <div class="px-dashboard-title">
+              <i class="fa-solid fa-server"></i>
+              <span>Machines virtuelles</span>
+            </div>
+            <div class="px-dashboard-controls">
+              <span class="px-countdown-wrap">
+                <i class="fa-solid fa-rotate"></i>
+                Refresh dans <span id="px-countdown">30</span>s
+              </span>
+              <button id="px-refresh-btn" class="px-btn px-btn--ghost" title="Rafraîchir maintenant">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+              <a id="px-open-proxmox" href="#" target="_blank" rel="noopener noreferrer"
+                 class="px-btn px-btn--primary">
+                <i class="fa-solid fa-up-right-from-square"></i> Ouvrir Proxmox
+              </a>
+            </div>
+          </div>
+
+          <!-- VM grid -->
+          <div id="px-grid" class="px-grid">
+            <p class="px-loading">
+              <i class="fa-solid fa-spinner fa-spin"></i> Chargement…
+            </p>
+          </div>
+
+          <!-- Status bar -->
+          <div id="px-status-bar" class="px-status-bar"></div>
+
+        </div>
+      </section>
+
       <section>
         <h2>Vue d'ensemble</h2>
         <p>
