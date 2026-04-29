@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Projet C#</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+    <script src="../assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <nav class="barre-de-navigation">
+      <div class="conteneur">
+        <a class="marque" href="../index.html">Mon Portfolio</a>
+        <button class="bascule-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="menu-principal">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a class="actif" href="../projects.html">Projets</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav class="projets-navigation">
+      <div class="conteneur">
+        <ul>
+          <li><a href="algorithmique.html">Algorithmique</a></li>
+          <li><a href="decouverte-programmation.html">Découverte de la programmation</a></li>
+          <li><a class="actif" href="projet-csharp.html">Projet C#</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="sous-hero">
+      <div class="conteneur">
+        <h1>Projet : Projet C#</h1>
+        <p class="sous-titre">Apprentissage du C# avec un projet simple.</p>
+      </div>
+    </header>
+
+    <main class="conteneur">
+      <section>
+        <h2>Description</h2>
+        <p>
+          Ce projet est une simple application console en C# qui demande le nom de l'utilisateur et affiche un message de bienvenue.
+        </p>
+        <p>
+          Le fichier correspondant est :
+          <ul>
+            <li><code>archives/Informatique/C#/Program.cs</code></li>
+          </ul>
+        </p>
+        
+        <h2>Code source et explications</h2>
+        <p>Voici le code source du programme :</p>
+        <pre><code>
+Console.WriteLine("quel est votre nom ?");
+string nom = Console.ReadLine();
+Console.WriteLine("Bonjour " + nom + "!");
+        </code></pre>
+        
+        <h3>Détails du code :</h3>
+        <ul>
+          <li><code>Console.WriteLine("quel est votre nom ?");</code> : Affiche la question "quel est votre nom ?" dans la console.</li>
+          <li><code>string nom = Console.ReadLine();</code> : Lit la ligne de texte entrée par l'utilisateur dans la console et la stocke dans une variable de type chaîne de caractères (string) appelée <code>nom</code>.</li>
+          <li><code>Console.WriteLine("Bonjour " + nom + "!");</code> : Affiche un message de bienvenue en concaténant la chaîne "Bonjour ", la valeur de la variable <code>nom</code>, et le caractère "!".</li>
+        </ul>
+
+        <a href="../projects.html" class="bouton">Retour aux projets</a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="conteneur">
+        <p>© <span id="annee"></span> — Mon Portfolio. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </body>
+</html>

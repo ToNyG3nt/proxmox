@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Projet Algorithmique</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+    <script src="../assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <nav class="barre-de-navigation">
+      <div class="conteneur">
+        <a class="marque" href="../index.html">Mon Portfolio</a>
+        <button class="bascule-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="menu-principal">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a class="actif" href="../projects.html">Projets</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav class="projets-navigation">
+      <div class="conteneur">
+        <ul>
+          <li><a class="actif" href="algorithmique.html">Algorithmique</a></li>
+          <li><a href="decouverte-programmation.html">Découverte de la programmation</a></li>
+          <li><a href="projet-csharp.html">Projet C#</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="sous-hero">
+      <div class="conteneur">
+        <h1>Projet : Algorithmique</h1>
+        <p class="sous-titre">Exercices d'algorithmique en C# et LaTeX.</p>
+      </div>
+    </header>
+
+    <main class="conteneur">
+      <section>
+        <h2>Description</h2>
+        <p>
+          Ce projet rassemble une série d'exercices d'algorithmique visant à mettre en pratique les structures de données fondamentales et les algorithmes de base. Les énoncés et les solutions sont rédigés en LaTeX pour un rendu propre des formules et du pseudo-code.
+        </p>
+        <p>
+          Les fichiers correspondants sont :
+          <ul>
+            <li><code>Algorithmique/exercices_algo.tex</code></li>
+            <li><code>../../Algorithmique/exercices_algo.pdf</code></li>
+          </ul>
+        </p>
+        
+        <h2>Visualiseur PDF</h2>
+        <div class="pdf-viewer">
+            <iframe src="../../Algorithmique/exercices_algo.pdf" class="pdf-embed blurred"></iframe>
+            <div class="unblur-overlay">
+                <button class="bouton unblur-button">Voir le PDF</button>
+            </div>
+        </div>
+
+        <h2>Extraits du projet</h2>
+        <h3>Exercice 1 : Calcul de la Factorielle</h3>
+        <pre><code>
+\begin{algorithm}{Calcul de la factorielle (version itérative)}
+\FUNCTION{Factorielle}{n} \\
+\INDENT résultat $\leftarrow$ 1 \\
+\INDENT \FOR{i de 1 à n} \\
+\INDENT \INDENT résultat $\leftarrow$ résultat $\times$ i \\
+\INDENT \ENDFOR \\
+\INDENT \RETURN{résultat} \\
+\KW{fin fonction}
+\end{algorithm}
+        </code></pre>
+
+        <h3>Exercice 2 : Vérification de Nombre Premier</h3>
+        <pre><code>
+\begin{algorithm}{Test de primalité}
+\FUNCTION{EstPremier}{n} \\
+\INDENT \IF{n $\leq$ 1} \\
+\INDENT \INDENT \RETURN{faux} \\
+\INDENT \ENDIF \\
+\INDENT \IF{n = 2} \\
+\INDENT \INDENT \RETURN{vrai} \\
+\INDENT \ENDIF \\
+\INDENT \FOR{i de 2 à $\sqrt{n}$} \\
+\INDENT \INDENT \IF{n mod i = 0} \\
+\INDENT \INDENT \INDENT \RETURN{faux} \\
+\INDENT \INDENT \ENDIF \\
+\INDENT \ENDFOR \\
+\INDENT \RETURN{vrai} \\
+\KW{fin fonction}
+\end{algorithm}
+        </code></pre>
+
+        <h3>Exercice 3 : Algorithme de Tri à Bulles</h3>
+        <pre><code>
+\begin{algorithm}{Tri à bulles}
+\PROCEDURE{TriBulles}{T, n} \\
+\INDENT \FOR{i de 1 à n-1} \\
+\INDENT \INDENT \FOR{j de 1 à n-i} \\
+\INDENT \INDENT \INDENT \IF{T[j] > T[j+1]} \\
+\INDENT \INDENT \INDENT \INDENT échanger T[j] et T[j+1] \\
+\INDENT \INDENT \INDENT \ENDIF \\
+\INDENT \INDENT \ENDFOR \\
+\INDENT \ENDFOR \\
+\KW{fin procédure}
+\end{algorithm}
+        </code></pre>
+        
+        <a href="../projects.html" class="bouton">Retour aux projets</a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="conteneur">
+        <p>© <span id="annee"></span> — Mon Portfolio. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </body>
+</html>

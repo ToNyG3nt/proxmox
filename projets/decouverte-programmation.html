@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Projet Découverte de la programmation</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+    <script src="../assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <nav class="barre-de-navigation">
+      <div class="conteneur">
+        <a class="marque" href="../index.html">Mon Portfolio</a>
+        <button class="bascule-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="menu-principal">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a class="actif" href="../projects.html">Projets</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav class="projets-navigation">
+      <div class="conteneur">
+        <ul>
+          <li><a href="algorithmique.html">Algorithmique</a></li>
+          <li><a class="actif" href="decouverte-programmation.html">Découverte de la programmation</a></li>
+          <li><a href="projet-csharp.html">Projet C#</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="sous-hero">
+      <div class="conteneur">
+        <h1>Projet : Découverte de la programmation</h1>
+        <p class="sous-titre">Logigrammes et pseudocode.</p>
+      </div>
+    </header>
+
+    <main class="conteneur">
+      <section>
+        <h2>Description</h2>
+        <p>
+          Ce projet est une introduction à la logique de la programmation à travers la création de logigrammes et l'écriture de pseudo-code. Il couvre les structures de contrôle de base comme les conditions et les boucles.
+        </p>
+        <p>
+          Les fichiers correspondants sont :
+          <ul>
+            <li><code>Decouverte_Programmation/logigrammes_pseudocode.tex</code></li>
+            <li><code>../../Decouverte_Programmation/corrige_logigrammes_pseudocode.pdf</code></li>
+          </ul>
+        </p>
+        
+        <h2>Visualiseur PDF</h2>
+        <div class="pdf-viewer">
+            <iframe src="../../Decouverte_Programmation/corrige_logigrammes_pseudocode.pdf" class="pdf-embed blurred"></iframe>
+            <div class="unblur-overlay">
+                <button class="bouton unblur-button">Voir le PDF</button>
+            </div>
+        </div>
+
+        <h2>Extraits du projet</h2>
+        <h3>Exercice 1 : Validation de la longueur du nom</h3>
+        <pre><code>
+Saisir nom
+Si longueur(nom) > 20 alors
+    Afficher "Votre nom est trop long"
+Sinon
+    Afficher "Votre nom est trop court"
+FinSi
+        </code></pre>
+
+        <h3>Exercice 3 : Boucle simple</h3>
+        <pre><code>
+Pour i allant de 1 à 10
+    Afficher "Je suis au tour n°", i
+FinPour
+        </code></pre>
+
+        <h3>Exercice 5 : Connexion utilisateur avec 3 tentatives</h3>
+        <pre><code>
+tentative <- 0
+Répéter
+    Saisir login
+    Saisir motDePasse
+    resultat <- testerUtilisateur(login, motDePasse)
+    tentative <- tentative + 1
+    Si resultat = 1 alors
+        Afficher "identifiants corrects"
+    Sinon
+        Afficher "identifiants incorrects"
+    FinSi
+Jusqu'à resultat = 1 OU tentative = 3
+Si resultat <> 1 alors
+    Afficher "Vous ne pouvez plus vous connecter"
+FinSi
+        </code></pre>
+
+        <a href="../projects.html" class="bouton">Retour aux projets</a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="conteneur">
+        <p>© <span id="annee"></span> — Mon Portfolio. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </body>
+</html>

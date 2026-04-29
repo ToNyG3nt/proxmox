@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Veille Technologique - Mignard Maël</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+    <script src="assets/js/content.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <nav class="barre-de-navigation">
+      <div class="conteneur">
+        <a class="marque" href="index.html">Mignard Maël</a>
+        <div class="groupe-boutons-nav">
+          <button class="bascule-theme" aria-label="Basculer le thème"></button>
+          <button class="bascule-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <ul id="menu-principal">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a class="actif" href="veille.html">Veille</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="menu-services">
+            <button class="services-trigger"><i class="fa-solid fa-layer-group"></i> Services <i class="fa-solid fa-chevron-down"></i></button>
+            <div class="services-dropdown">
+              <a href="https://mael-m.fr" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-house"></i> Portfolio</a>
+              <a href="https://pve.mael-m.fr" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-server"></i> Proxmox</a>
+              <a href="https://ssh.mael-m.fr" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-terminal"></i> SSH Access</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="conteneur">
+        <h1>Ma <span class="accent">Veille Technologique</span></h1>
+        <p class="sous-titre">Exploration des nouvelles tendances et technologies du monde du développement.</p>
+      </div>
+    </header>
+
+    <main class="conteneur">
+      <section class="veille-section">
+        <h2>Sujets de Veille</h2>
+        <p>
+          Ma veille technologique se concentre sur plusieurs domaines qui me passionnent et qui sont en constante évolution. J'utilise des outils comme les flux RSS, les newsletters, et les réseaux sociaux pour rester à jour.
+        </p>
+        
+        <article class="sujet">
+          <h3>L'évolution des frameworks Frontend</h3>
+          <p>
+            Je suis avec attention les nouveautés concernant les frameworks et librairies comme <strong>React</strong>, <strong>Vue.js</strong>, et <strong>Svelte</strong>. Les nouvelles versions apportent souvent des améliorations de performance, de nouvelles fonctionnalités et des approches innovantes pour le développement d'interfaces.
+          </p>
+          <p><em>Date de la dernière mise à jour : Janvier 2026</em></p>
+        </article>
+        
+        <article class="sujet">
+          <h3>Le développement Backend avec C# et .NET</h3>
+          <p>
+            Étant donné mon intérêt pour C#, je m'informe sur les évolutions de <strong>.NET</strong>, notamment avec les nouvelles versions qui améliorent la performance, la sécurité et les capacités cross-platform. Je m'intéresse aussi à <strong>ASP.NET Core</strong> pour la création d'API web modernes.
+          </p>
+          <p><em>Date de la dernière mise à jour : Décembre 2025</em></p>
+        </article>
+
+        <article class="sujet">
+          <h3>Automatisation et DevOps</h3>
+          <p>
+            L'automatisation des tâches de développement et de déploiement est un sujet crucial. Je m'intéresse aux outils comme <strong>GitLab CI/CD</strong>, <strong>GitHub Actions</strong> et <strong>Docker</strong> pour optimiser les workflows de développement et assurer une intégration et un déploiement continus (CI/CD).
+          </p>
+          <p><em>Date de la dernière mise à jour : Novembre 2025</em></p>
+        </article>
+
+      </section>
+    </main>
+
+    <footer>
+      <div class="conteneur">
+        <p> <span id="annee"></span> — Mon Portfolio. </p>
+      </div>
+    </footer>
+  </body>
+</html>

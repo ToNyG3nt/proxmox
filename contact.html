@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <nav class="barre-de-navigation">
+      <div class="conteneur">
+        <a class="marque" href="index.html">Mignard Maël</a>
+        <button class="bascule-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="menu-principal">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li><a class="actif" href="contact.html">Contact</a></li>
+          <li class="menu-services">
+            <button class="services-trigger"><i class="fa-solid fa-layer-group"></i> Services <i class="fa-solid fa-chevron-down"></i></button>
+            <div class="services-dropdown">
+              <a href="https://mael-m.fr" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-house"></i> Portfolio</a>
+              <a href="https://pve.mael-m.fr" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-server"></i> Proxmox</a>
+              <a href="https://ssh.mael-m.fr" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-terminal"></i> SSH Access</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="sous-hero">
+      <div class="conteneur">
+        <h1>Contact</h1>
+        <p class="sous-titre">Discutons de vos projets</p>
+      </div>
+    </header>
+
+    <main class="conteneur">
+      <section>
+        <form class="formulaire" action="https://formspree.io/f/VOTRE_CODE_UNIQUE" method="post">
+          <div class="grille formulaire-grille">
+            <label>
+              Nom
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required placeholder="prenom.nom@my-digital-school.org" />
+            </label>
+          </div>
+          <label>
+            Sujet
+            <input type="text" name="subject" />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+          <button class="bouton" type="submit">Envoyer</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Retrouvez-moi en ligne</h2>
+        <p><strong>GitHub:</strong> <a href="https://github.com/ToNyG3nt/BTS" target="_blank">Maël Mignard</a></p>
+        <p><strong>Email professionnel:</strong> <a href="mailto:mael.mignard@my-digital-school.org">mael.mignard@my-digital-school.org</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="conteneur">
+        <p><span id="annee"></span> — Mon Portfolio.</p>
+      </div>
+    </footer>
+  </body>
+  </html>
