@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/stats.js" defer></script>
   </head>
   <body>
     <nav class="barre-de-navigation">
@@ -41,6 +42,28 @@
             <p>Accès terminal distant sécurisé</p>
           </a>
         </div>
+
+        <div class="hub-stats" id="proxmox-stats">
+          <div class="stat-bloc">
+            <span class="stat-label"><span class="stat-dot offline" id="stat-dot"></span> Proxmox</span>
+            <span class="stat-value" id="stat-status">…</span>
+          </div>
+          <div class="stat-bloc">
+            <span class="stat-label"><i class="fa-solid fa-microchip"></i> CPU</span>
+            <span class="stat-value" id="stat-cpu">…</span>
+            <div class="stat-bar-track"><div class="stat-bar" id="bar-cpu"></div></div>
+          </div>
+          <div class="stat-bloc">
+            <span class="stat-label"><i class="fa-solid fa-memory"></i> RAM</span>
+            <span class="stat-value" id="stat-ram">…</span>
+            <div class="stat-bar-track"><div class="stat-bar" id="bar-ram"></div></div>
+          </div>
+          <div class="stat-bloc">
+            <span class="stat-label"><i class="fa-solid fa-clock"></i> Uptime</span>
+            <span class="stat-value" id="stat-uptime">…</span>
+          </div>
+        </div>
+
       </div>
     </main>
 
