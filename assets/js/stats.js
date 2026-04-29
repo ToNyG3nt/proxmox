@@ -16,6 +16,7 @@ async function fetchProxmoxStats() {
   try {
     const res = await fetch('stats.php', { signal: AbortSignal.timeout(6000) });
     const json = await res.json();
+    console.log('[stats]', json);
 
     if (json.status === 'offline' || json.error || !json.data) {
       setStatsOffline();
@@ -40,7 +41,8 @@ async function fetchProxmoxStats() {
 
     setBarWidth('bar-cpu', cpuPct);
     setBarWidth('bar-ram', ramPct);
-  } catch {
+  } catch (e) {
+    console.error('[stats] erreur:', e);
     setStatsOffline();
   }
 }
