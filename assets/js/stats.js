@@ -22,15 +22,21 @@ async function fetchProxmoxStats() {
       return;
     }
 
-    const d = json.data;
-    const cpuPct = Math.round(d.cpu * 100);
-    const ramPct = Math.round((d.memory.used / d.memory.total) * 100);
+    // /api2/json/nodes retourne un tableau, on prend le premier nœud online
+    const node = Array.isArray(json.data)
+      ? json.data.find(n => n.status === 'online') || json.data[0]
+      : json.data;
+
+    if (!node) { setStatsOffline(); return; }
+
+    const cpuPct = Math.round((node.cpu ?? 0) * 100);
+    const ramPct = node.maxmem ? Math.round((node.mem / node.maxmem) * 100) : 0;
 
     document.getElementById('stat-dot').className = 'stat-dot online';
     document.getElementById('stat-status').textContent = 'En ligne';
     document.getElementById('stat-cpu').textContent = cpuPct + '%';
     document.getElementById('stat-ram').textContent = ramPct + '%';
-    document.getElementById('stat-uptime').textContent = formatUptime(d.uptime);
+    document.getElementById('stat-uptime').textContent = formatUptime(node.uptime ?? 0);
 
     setBarWidth('bar-cpu', cpuPct);
     setBarWidth('bar-ram', ramPct);
