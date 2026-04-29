@@ -43,117 +43,135 @@
       </div>
     </header>
 
+    <!-- Onglets -->
+    <div class="px-tabs-bar">
+      <div class="conteneur">
+        <button class="px-tab actif" data-tab="dashboard">
+          <i class="fa-solid fa-gauge-high"></i> Dashboard
+        </button>
+        <button class="px-tab" data-tab="presentation">
+          <i class="fa-solid fa-circle-info"></i> Présentation
+        </button>
+      </div>
+    </div>
+
     <main class="conteneur">
 
-      <!-- ── Live Dashboard ───────────────────────────────── -->
-      <section>
-        <h2>Infrastructure live</h2>
+      <!-- ── Onglet Dashboard ──────────────────────────────── -->
+      <div id="tab-dashboard" class="px-tab-content actif">
 
-        <div class="px-dashboard">
-
-          <!-- Header -->
-          <div class="px-dashboard-header">
-            <div class="px-dashboard-title">
-              <i class="fa-solid fa-server"></i>
-              <span>Machines virtuelles</span>
-            </div>
-            <div class="px-dashboard-controls">
-              <span class="px-countdown-wrap">
-                <i class="fa-solid fa-rotate"></i>
-                Refresh dans <span id="px-countdown">30</span>s
-              </span>
-              <button id="px-refresh-btn" class="px-btn px-btn--ghost" title="Rafraîchir maintenant">
-                <i class="fa-solid fa-arrows-rotate"></i>
-              </button>
-              <a id="px-open-proxmox" href="#" target="_blank" rel="noopener noreferrer"
-                 class="px-btn px-btn--primary">
-                <i class="fa-solid fa-up-right-from-square"></i> Ouvrir Proxmox
-              </a>
-            </div>
+        <!-- Barre nœud + bouton Proxmox -->
+        <div class="px-node-bar">
+          <div class="px-node-info">
+            <span class="stat-dot offline" id="px-node-dot"></span>
+            <span id="px-node-label">Connexion…</span>
+            <span class="px-sep">·</span>
+            <i class="fa-solid fa-microchip"></i>
+            <span id="px-node-cpu">—</span>
+            <span class="px-sep">·</span>
+            <i class="fa-solid fa-memory"></i>
+            <span id="px-node-ram">—</span>
+            <span class="px-sep">·</span>
+            <i class="fa-regular fa-clock"></i>
+            <span id="px-node-uptime">—</span>
           </div>
-
-          <!-- VM grid -->
-          <div id="px-grid" class="px-grid">
-            <p class="px-loading">
-              <i class="fa-solid fa-spinner fa-spin"></i> Chargement…
-            </p>
+          <div class="px-node-actions">
+            <span class="px-countdown-wrap">
+              <i class="fa-solid fa-rotate"></i> <span id="px-countdown">30</span>s
+            </span>
+            <button id="px-refresh-btn" class="px-btn px-btn--ghost" title="Rafraîchir">
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+            <a id="px-open-proxmox" href="#" target="_blank" rel="noopener noreferrer"
+               class="px-btn px-btn--primary">
+              <i class="fa-solid fa-up-right-from-square"></i> Ouvrir Proxmox
+            </a>
           </div>
-
-          <!-- Status bar -->
-          <div id="px-status-bar" class="px-status-bar"></div>
-
-        </div>
-      </section>
-
-      <section>
-        <h2>Vue d'ensemble</h2>
-        <p>
-          Ce projet est un Home-Lab construit autour d'un Mini-PC basse consommation faisant tourner
-          <strong>Proxmox VE</strong>. Il héberge plusieurs conteneurs LXC Debian et est exposé publiquement
-          via un tunnel <strong>Cloudflare Zero Trust</strong>, sans ouverture de port sur la box.
-          L'ensemble est automatisé et géré depuis un Mac via VS Code et Git.
-        </p>
-
-        <h2>Architecture technique</h2>
-        <div class="proxmox-grille">
-
-          <div class="proxmox-bloc">
-            <div class="proxmox-bloc-icone"><i class="fa-solid fa-microchip"></i></div>
-            <div>
-              <h3>Hardware</h3>
-              <p>Mini-PC compact Low Power dédié au Home-Lab — silencieux, faible empreinte énergétique.</p>
-            </div>
-          </div>
-
-          <div class="proxmox-bloc">
-            <div class="proxmox-bloc-icone"><i class="fa-solid fa-bolt"></i></div>
-            <div>
-              <h3>Économie d'énergie</h3>
-              <p>Extinction automatique chaque soir via une tâche <strong>Cron</strong> sur le serveur Proxmox, pilotée par planification horaire.</p>
-            </div>
-          </div>
-
-          <div class="proxmox-bloc">
-            <div class="proxmox-bloc-icone"><i class="fa-solid fa-server"></i></div>
-            <div>
-              <h3>Virtualisation</h3>
-              <p><strong>Proxmox VE</strong> avec conteneurs <strong>LXC Debian</strong> — isolation légère, démarrage rapide, consommation réduite.</p>
-            </div>
-          </div>
-
-          <div class="proxmox-bloc">
-            <div class="proxmox-bloc-icone"><i class="fa-solid fa-shield-halved"></i></div>
-            <div>
-              <h3>Sécurité Zero Trust</h3>
-              <p>Exposition des services via <strong>Cloudflare Tunnel</strong> — aucun port ouvert sur la box. Accès protégé par <strong>OTP</strong>.</p>
-            </div>
-          </div>
-
-          <div class="proxmox-bloc">
-            <div class="proxmox-bloc-icone"><i class="fa-solid fa-code-branch"></i></div>
-            <div>
-              <h3>Workflow DevOps</h3>
-              <p>Push Git depuis <strong>VS Code (Mac)</strong> — pull automatique déclenché sur le serveur pour déploiement continu sans intervention manuelle.</p>
-            </div>
-          </div>
-
         </div>
 
-        <h2>Stack technique</h2>
-        <ul class="etiquettes">
-          <li>Proxmox VE</li>
-          <li>LXC Debian</li>
-          <li>Cloudflare Tunnel</li>
-          <li>OTP</li>
-          <li>Cron</li>
-          <li>Git</li>
-          <li>VS Code</li>
-          <li>Linux</li>
-        </ul>
+        <!-- Grille de VMs -->
+        <div id="px-grid" class="px-grid">
+          <p class="px-loading">
+            <i class="fa-solid fa-spinner fa-spin"></i> Chargement des machines…
+          </p>
+        </div>
 
-        <br>
-        <a href="../projects.html" class="bouton">Retour aux projets</a>
-      </section>
+        <div id="px-status-bar" class="px-status-bar"></div>
+      </div>
+
+      <!-- ── Onglet Présentation ──────────────────────────── -->
+      <div id="tab-presentation" class="px-tab-content">
+        <section>
+          <h2>Vue d'ensemble</h2>
+          <p>
+            Ce projet est un Home-Lab construit autour d'un Mini-PC basse consommation faisant tourner
+            <strong>Proxmox VE</strong>. Il héberge plusieurs conteneurs LXC Debian et est exposé publiquement
+            via un tunnel <strong>Cloudflare Zero Trust</strong>, sans ouverture de port sur la box.
+            L'ensemble est automatisé et géré depuis un Mac via VS Code et Git.
+          </p>
+
+          <h2>Architecture technique</h2>
+          <div class="proxmox-grille">
+
+            <div class="proxmox-bloc">
+              <div class="proxmox-bloc-icone"><i class="fa-solid fa-microchip"></i></div>
+              <div>
+                <h3>Hardware</h3>
+                <p>Mini-PC compact Low Power dédié au Home-Lab — silencieux, faible empreinte énergétique.</p>
+              </div>
+            </div>
+
+            <div class="proxmox-bloc">
+              <div class="proxmox-bloc-icone"><i class="fa-solid fa-bolt"></i></div>
+              <div>
+                <h3>Économie d'énergie</h3>
+                <p>Extinction automatique chaque soir via une tâche <strong>Cron</strong> sur le serveur Proxmox, pilotée par planification horaire.</p>
+              </div>
+            </div>
+
+            <div class="proxmox-bloc">
+              <div class="proxmox-bloc-icone"><i class="fa-solid fa-server"></i></div>
+              <div>
+                <h3>Virtualisation</h3>
+                <p><strong>Proxmox VE</strong> avec conteneurs <strong>LXC Debian</strong> — isolation légère, démarrage rapide, consommation réduite.</p>
+              </div>
+            </div>
+
+            <div class="proxmox-bloc">
+              <div class="proxmox-bloc-icone"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <h3>Sécurité Zero Trust</h3>
+                <p>Exposition des services via <strong>Cloudflare Tunnel</strong> — aucun port ouvert sur la box. Accès protégé par <strong>OTP</strong>.</p>
+              </div>
+            </div>
+
+            <div class="proxmox-bloc">
+              <div class="proxmox-bloc-icone"><i class="fa-solid fa-code-branch"></i></div>
+              <div>
+                <h3>Workflow DevOps</h3>
+                <p>Push Git depuis <strong>VS Code (Mac)</strong> — pull automatique déclenché sur le serveur pour déploiement continu sans intervention manuelle.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <h2>Stack technique</h2>
+          <ul class="etiquettes">
+            <li>Proxmox VE</li>
+            <li>LXC Debian</li>
+            <li>Cloudflare Tunnel</li>
+            <li>OTP</li>
+            <li>Cron</li>
+            <li>Git</li>
+            <li>VS Code</li>
+            <li>Linux</li>
+          </ul>
+
+          <br>
+          <a href="../projects.html" class="bouton">Retour aux projets</a>
+        </section>
+      </div>
+
     </main>
 
     <footer>

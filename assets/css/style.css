@@ -316,6 +316,24 @@ body.light-theme {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewport="0 0 24 24" version="1.1"><text x="0" y="20" font-family="monospace" font-size="20" fill="white">?</text></svg>') 12 12, auto;
 }
 
+/* ──── Onglets Proxmox ───────────────────────────────────── */
+.px-tabs-bar{border-bottom:1px solid rgba(148,163,184,.15);background:rgba(15,23,42,.6);backdrop-filter:blur(6px)}
+.px-tabs-bar .conteneur{display:flex;gap:4px;padding:8px 16px}
+.px-tab{background:transparent;border:none;font-family:inherit;font-size:1em;color:var(--muted);padding:8px 16px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:background .15s,color .15s}
+.px-tab:hover{background:rgba(148,163,184,.1);color:var(--text)}
+.px-tab.actif{background:var(--accent-bg);color:var(--accent)}
+.px-tab-content{display:none;padding:20px 0}
+.px-tab-content.actif{display:block}
+
+/* ──── Barre nœud ────────────────────────────────────────── */
+.px-node-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;background:var(--card);border:1px solid rgba(148,163,184,.15);border-radius:12px;padding:12px 18px;margin-bottom:14px}
+.px-node-info{display:flex;align-items:center;gap:8px;font-size:.85em;color:var(--muted);flex-wrap:wrap}
+.px-node-info i{color:var(--accent);opacity:.8}
+.px-sep{color:rgba(148,163,184,.3)}
+.px-node-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.px-countdown-wrap{display:flex;align-items:center;gap:5px;color:var(--muted);font-size:.82em}
+.px-countdown-wrap i{color:var(--accent);font-size:.85em}
+
 /* ──── Proxmox Live Dashboard ────────────────────────────── */
 .px-dashboard{background:var(--card);border:1px solid rgba(148,163,184,.15);border-radius:14px;overflow:hidden;margin:16px 0}
 
