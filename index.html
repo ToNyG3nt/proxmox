@@ -3,81 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mignard Maël</title>
+    <title>Hub — Mignard Maël</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
-    <script src="assets/js/content.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </head>
   <body>
     <nav class="barre-de-navigation">
       <div class="conteneur">
         <a class="marque" href="index.html">Mignard Maël</a>
-        <div class="groupe-boutons-nav">
-          <button class="bascule-theme" aria-label="Basculer le thème"></button>
-          <button class="bascule-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-        <ul id="menu-principal">
-          <li><a class="actif" href="index.html">Accueil</a></li>
-          <li><a href="competences.html">Compétences</a></li>
-          <li><a href="projects.html">Projets</a></li>
-          <li><a href="veille.html">Veille</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li class="menu-services">
-            <button class="services-trigger"><i class="fa-solid fa-layer-group"></i> Services <i class="fa-solid fa-chevron-down"></i></button>
-            <div class="services-dropdown">
-              <a href="https://mael-m.fr" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-house"></i> Portfolio</a>
-              <a href="https://pve.mael-m.fr" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-server"></i> Proxmox</a>
-              <a href="https://ssh.mael-m.fr" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-terminal"></i> SSH Access</a>
-            </div>
-          </li>
-        </ul>
+        <button class="bascule-theme" aria-label="Basculer le thème"></button>
       </div>
     </nav>
 
-    <header class="hero">
-      <div class="conteneur">
-        <h1>Bonjour, je suis <span class="accent">Maël Mignard</span></h1>
-        <p class="sous-titre">Développeur Python,C#, LaTeX, Réseaux, web</p>
-        <div class="appel-action">
-          <a class="bouton" href="assets/cv_fictif.pdf" download>Télécharger mon CV</a>
-          <a class="bouton" href="projects.html">Voir mes projets</a>
-          <a class="bouton secondaire" href="contact.html">Me contacter</a>
+    <main class="hub-principal">
+      <div class="conteneur hub-conteneur">
+        <div class="hub-entete">
+          <h1>Hub <span class="accent">Personnel</span></h1>
+          <p class="hub-sous-titre">Accès rapide à mes services</p>
+        </div>
+        <div class="hub-grille">
+          <a class="hub-carte" href="projects.html">
+            <div class="hub-carte-icone"><i class="fa-solid fa-user"></i></div>
+            <h2>Portfolio</h2>
+            <p>Projets, compétences, veille technologique</p>
+          </a>
+          <a class="hub-carte" href="https://pve.mael-m.fr" target="_blank" rel="noopener noreferrer">
+            <div class="hub-carte-icone"><i class="fa-solid fa-server"></i></div>
+            <h2>Proxmox</h2>
+            <p>Interface de gestion de virtualisation</p>
+          </a>
+          <a class="hub-carte" href="https://ssh.mael-m.fr" target="_blank" rel="noopener noreferrer">
+            <div class="hub-carte-icone"><i class="fa-solid fa-terminal"></i></div>
+            <h2>SSH Access</h2>
+            <p>Accès terminal distant sécurisé</p>
+          </a>
         </div>
       </div>
-    </header>
-
-    <main class="conteneur a-propos-principal">
-      <section class="a-propos-section">
-        <h2>Qui suis-je ?</h2>
-        <p>
-          <strong>Maël Mignard</strong>, passionné par la création numérique et la découverte de nouvelles technologies.<br>
-          J’aime concevoir des interfaces <b>simples</b>, <b>accessibles</b> et <b>performantes</b>.<br>
-          Je travaille principalement avec <b>HTML</b>, <b>CSS</b> et <b>JavaScript</b>.<br>
-        </p>
-        <h3>Mes passions</h3>
-        <ul class="a-propos-passions">
-          <li>Jeux vidéo&nbsp;: pour l’immersion, la créativité et l’esprit d’équipe</li>
-          <li>Programmation&nbsp;: pour le plaisir de résoudre des problèmes et d’inventer</li>
-          <li>Vélo&nbsp;: pour l’aventure, l’endurance et la liberté</li>
-        </ul>
-        <h3>Ce que j’aime dans le web</h3>
-        <p>
-          L’UX, l’accessibilité, le design moderne, et apprendre en continu.<br>
-          Je suis toujours curieux d’explorer de nouveaux outils et de partager mes découvertes.
-        </p>
-      </section>
-
     </main>
 
     <footer>
       <div class="conteneur">
-        <p> <span id="annee"></span> — Mon Portfolio. </p>
+        <p><span id="annee"></span> — Mignard Maël</p>
       </div>
     </footer>
   </body>
-  </html>
+</html>
