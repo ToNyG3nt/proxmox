@@ -1,6 +1,6 @@
 // ── Configuration ────────────────────────────────────────────
 // Remplir avec l'URL publique de ton Proxmox (via Cloudflare Tunnel)
-const PROXMOX_WEB_URL = 'https://proxmox.TONDOMAINE.fr';
+const PROXMOX_WEB_URL = 'https://pve.mael-m.fr';
 
 // Chemin vers le proxy PHP (relatif à la page qui charge ce script)
 const API_BASE = '../proxmox-api.php';
