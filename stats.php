@@ -2,7 +2,7 @@
 // Configuration - NE PAS PARTAGER CES INFOS / ajouter stats.php au .gitignore
 $cfClientId     = "2b96ea4f1b42d18ae26e919bf1e2fa31.access";
 $cfClientSecret = "13a2d4e16bdc8aac1fdcb5650ba05d0779818985de9256cdf62a0bb5beb33ca9";
-$pveToken       = "PVEAPIToken=root@pam!portfolio-stats=92e22939-89f4-43dc-8bb4-58098b733265";
+$pveToken       = "PVEAPIToken=root@pam!portfolio-stats=28fa53a9-b05f-473e-96f9-b31626ef15a7";
 
 $url = "https://pve.mael-m.fr/api2/json/nodes";
 
