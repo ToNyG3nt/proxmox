@@ -351,9 +351,9 @@ body.light-theme {
 .px-card:hover{border-color:var(--accent)}
 
 .px-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.px-card-title{display:flex;align-items:center;gap:7px;font-size:1em;min-width:0;flex-wrap:wrap}
+.px-card-title{display:flex;align-items:center;gap:7px;font-size:1em;min-width:0;flex:1}
 .px-card-title i{color:var(--accent);font-size:.9em;flex-shrink:0}
-.px-card-title span:first-of-type{word-break:break-word}
+.px-card-title span:first-of-type{flex:1;min-width:0;overflow-wrap:anywhere}
 .px-badge{background:rgba(148,163,184,.14);padding:2px 8px;border-radius:999px;font-size:.75em;color:var(--muted);white-space:nowrap;flex-shrink:0}
 
 .px-status{display:flex;align-items:center;gap:5px;font-size:.85em;color:var(--muted);white-space:nowrap;flex-shrink:0}
