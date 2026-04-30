@@ -1,7 +1,8 @@
 // ── Configuration ─────────────────────────────────────────────
 const PROXMOX_WEB_URL = 'https://pve.mael-m.fr';
-const API_VMS         = '../proxmox-api.php';
-const API_STATS       = '../stats.php';
+const _BASE = location.pathname.includes('/projets/') ? '../' : '';
+const API_VMS         = _BASE + 'proxmox-api.php';
+const API_STATS       = _BASE + 'stats.php';
 
 // ── État global ───────────────────────────────────────────────
 let countdownVal = 30;
