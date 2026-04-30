@@ -40,7 +40,8 @@
         text-decoration: none;
       }
       .dash-header .dash-back:hover { color: var(--text); }
-      .dash-main { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+      .dash-main { padding: 24px 40px; }
+      #px-open-proxmox { font-size: 1em; padding: 10px 22px; }
     </style>
   </head>
   <body>
@@ -49,6 +50,10 @@
         <i class="fa-solid fa-server"></i> Proxmox Dashboard
       </div>
       <div style="display:flex;align-items:center;gap:16px;">
+        <a id="px-open-proxmox-header" href="https://pve.mael-m.fr" target="_blank" rel="noopener noreferrer"
+           style="display:inline-flex;align-items:center;gap:8px;padding:9px 20px;background:var(--accent);color:#0b1020;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;">
+          <i class="fa-solid fa-up-right-from-square"></i> Ouvrir Proxmox
+        </a>
         <a href="index.html" class="dash-back">
           <i class="fa-solid fa-arrow-left"></i> Hub
         </a>
