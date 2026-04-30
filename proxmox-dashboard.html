@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proxmox Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥</text></svg>">
+    <script src="assets/js/proxmox-dashboard.js" defer></script>
+    <style>
+      body { background: var(--bg); }
+      .dash-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+        background: rgba(15,23,42,.85);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(148,163,184,.15);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .dash-header .dash-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .dash-header .dash-back {
+        color: var(--muted);
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+      }
+      .dash-header .dash-back:hover { color: var(--text); }
+      .dash-main { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+    </style>
+  </head>
+  <body>
+    <header class="dash-header">
+      <div class="dash-title">
+        <i class="fa-solid fa-server"></i> Proxmox Dashboard
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <a href="index.html" class="dash-back">
+          <i class="fa-solid fa-arrow-left"></i> Hub
+        </a>
+      </div>
+    </header>
+
+    <main class="dash-main">
+
+      <!-- Barre nœud -->
+      <div class="px-node-bar">
+        <div class="px-node-info">
+          <span class="stat-dot offline" id="px-node-dot"></span>
+          <span id="px-node-label">Connexion…</span>
+          <span class="px-sep">·</span>
+          <i class="fa-solid fa-microchip"></i>
+          <span id="px-node-cpu">—</span>
+          <span class="px-sep">·</span>
+          <i class="fa-solid fa-memory"></i>
+          <span id="px-node-ram">—</span>
+          <span class="px-sep">·</span>
+          <i class="fa-regular fa-clock"></i>
+          <span id="px-node-uptime">—</span>
+        </div>
+        <div class="px-node-actions">
+          <span class="px-countdown-wrap">
+            <i class="fa-solid fa-rotate"></i> <span id="px-countdown">30</span>s
+          </span>
+          <button id="px-refresh-btn" class="px-btn px-btn--ghost" title="Rafraîchir">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </button>
+          <a id="px-open-proxmox" href="#" target="_blank" rel="noopener noreferrer"
+             class="px-btn px-btn--primary">
+            <i class="fa-solid fa-up-right-from-square"></i> Ouvrir Proxmox
+          </a>
+        </div>
+      </div>
+
+      <!-- Grille de VMs -->
+      <div id="px-grid" class="px-grid">
+        <p class="px-loading">
+          <i class="fa-solid fa-spinner fa-spin"></i> Chargement des machines…
+        </p>
+      </div>
+
+      <div id="px-status-bar" class="px-status-bar"></div>
+    </main>
+  </body>
+</html>
