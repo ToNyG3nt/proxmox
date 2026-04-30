@@ -344,23 +344,23 @@ body.light-theme {
 .px-countdown-wrap{color:var(--muted);font-size:.82em;display:flex;align-items:center;gap:5px}
 .px-countdown-wrap i{color:var(--accent);font-size:.85em}
 
-.px-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;padding:16px}
+.px-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;padding:16px}
 
-.px-card{background:var(--bg);border:1px solid rgba(148,163,184,.12);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:11px;transition:border-color .2s}
+.px-card{background:var(--bg);border:1px solid rgba(148,163,184,.12);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s}
 .px-card--running{border-color:rgba(34,197,94,.22)}
 .px-card:hover{border-color:var(--accent)}
 
 .px-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.px-card-title{display:flex;align-items:center;gap:7px;font-size:.95em;min-width:0}
+.px-card-title{display:flex;align-items:center;gap:7px;font-size:1em;min-width:0;flex-wrap:wrap}
 .px-card-title i{color:var(--accent);font-size:.9em;flex-shrink:0}
-.px-card-title span:first-of-type{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.px-badge{background:rgba(148,163,184,.14);padding:2px 7px;border-radius:999px;font-size:.68em;color:var(--muted);white-space:nowrap;flex-shrink:0}
+.px-card-title span:first-of-type{word-break:break-word}
+.px-badge{background:rgba(148,163,184,.14);padding:2px 8px;border-radius:999px;font-size:.75em;color:var(--muted);white-space:nowrap;flex-shrink:0}
 
-.px-status{display:flex;align-items:center;gap:5px;font-size:.8em;color:var(--muted);white-space:nowrap;flex-shrink:0}
+.px-status{display:flex;align-items:center;gap:5px;font-size:.85em;color:var(--muted);white-space:nowrap;flex-shrink:0}
 
-.px-card-meta{display:flex;flex-direction:column;gap:7px}
-.px-meta-row{display:flex;align-items:center;gap:8px;font-size:.82em;color:var(--muted)}
-.px-meta-row i{width:13px;text-align:center;color:var(--accent);opacity:.7;flex-shrink:0}
+.px-card-meta{display:flex;flex-direction:column;gap:9px}
+.px-meta-row{display:flex;align-items:center;gap:8px;font-size:.92em;color:var(--muted)}
+.px-meta-row i{width:14px;text-align:center;color:var(--accent);opacity:.7;flex-shrink:0}
 .px-bar-track{flex:1;height:4px;background:rgba(148,163,184,.14);border-radius:2px;overflow:hidden}
 .px-bar{height:100%;border-radius:2px;transition:width .5s ease}
 .px-muted{color:var(--muted)}
