@@ -5,11 +5,18 @@
 // proxmox-api.php (il est dans .gitignore).
 // ─────────────────────────────────────────────────────────────
 
-define('PVE_HOST',  'https://192.168.x.x:8006');       // IP/host Proxmox (interne)
+// URL publique Proxmox (via tunnel Cloudflare)
+define('PVE_HOST', 'https://pve.mael-m.fr');
+
+// Token API Proxmox (format: user@realm!tokenid=secret)
 define('PVE_TOKEN', 'root@pam!mon-token=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx');
 
+// Cloudflare Access — Service Token (depuis Zero Trust > Access > Service Auth)
+define('CF_CLIENT_ID',     'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.access');
+define('CF_CLIENT_SECRET', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+
 // Restreindre les appels à ton domaine uniquement
-$allowed_origin = 'https://TONDOMAINE.fr';
+$allowed_origin = 'https://mael-m.fr';
 header('Access-Control-Allow-Origin: ' . $allowed_origin);
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
@@ -22,9 +29,12 @@ function pve(string $path, string $method = 'GET'): mixed {
     $ch = curl_init(PVE_HOST . '/api2/json' . $path);
     curl_setopt_array($ch, [
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_SSL_VERIFYHOST => false,
-        CURLOPT_HTTPHEADER     => ['Authorization: PVEAPIToken=' . PVE_TOKEN],
+        CURLOPT_SSL_VERIFYPEER => true,
+        CURLOPT_HTTPHEADER     => [
+            'Authorization: PVEAPIToken=' . PVE_TOKEN,
+            'CF-Access-Client-Id: '     . CF_CLIENT_ID,
+            'CF-Access-Client-Secret: ' . CF_CLIENT_SECRET,
+        ],
         CURLOPT_CUSTOMREQUEST  => $method,
         CURLOPT_TIMEOUT        => 8,
     ]);
