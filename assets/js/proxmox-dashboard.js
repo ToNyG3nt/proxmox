@@ -132,13 +132,15 @@ function vmCard(vm) {
         <div class="px-card ${running ? 'px-card--running' : ''}">
             <div class="px-card-header">
                 <div class="px-card-title">
-                    <i class="fa-solid ${icon}"></i>
-                    <span>${vm.name}</span>
-                    <span class="px-badge">${typeTag} ${vm.vmid}</span>
+                    <i class="fa-solid ${icon}" style="flex-shrink:0"></i>
+                    <span style="flex:1;min-width:0;word-break:break-word;white-space:normal;overflow:visible">${vm.name}</span>
                 </div>
-                <div class="px-status">
-                    <span class="stat-dot ${running ? 'online' : 'offline'}"></span>
-                    ${running ? 'Running' : 'Stopped'}
+                <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:8px">
+                    <span class="px-badge">${typeTag} ${vm.vmid}</span>
+                    <div class="px-status">
+                        <span class="stat-dot ${running ? 'online' : 'offline'}"></span>
+                        ${running ? 'Running' : 'Stopped'}
+                    </div>
                 </div>
             </div>
             <div class="px-card-meta">
